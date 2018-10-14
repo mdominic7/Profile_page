@@ -22,13 +22,42 @@ app.set("view engine","ejs");
 // routes
 app.get("/",function(req,res) {
 
+	res.redirect("/home");
+});
+
+app.get("/home",function(req,res) {
+
 	res.render("landing");
 });
 
-app.get("/profile",function (req,res) {
+app.get("/home/profile",function (req,res) {
 	
 	res.render("index");
 });
+
+app.get("/home/about",function(req,res) {
+
+	res.render("about");
+});
+
+app.get("/home/gallery",function(req,res) {
+
+	res.render("gallery");
+});
+
+app.get("/home/projects",function(req,res) {
+
+	res.render("projects");
+});
+
+app.get("/home/achievements",function(req,res) {
+
+	res.render("certificates");
+
+});
+
+
+
 
  app.listen(3000,function () {
 	// body...
