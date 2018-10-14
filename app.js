@@ -40,17 +40,17 @@ app.get("/home/about",function(req,res) {
 	res.render("about");
 });
 
-app.get("/home/gallery",function(req,res) {
+// app.get("/home/gallery",function(req,res) {
 
-	res.render("gallery");
-});
+// 	res.render("gallery");
+// });
 
 app.get("/home/projects",function(req,res) {
 
 	res.render("projects");
 });
 
-app.get("/home/achievements",function(req,res) {
+app.get("/home/certificates",function(req,res) {
 
 	res.render("certificates");
 
