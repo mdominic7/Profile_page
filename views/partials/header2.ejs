@@ -4,6 +4,8 @@
 	<title>Mario Dominic</title>
 	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -11,14 +13,19 @@
 		<!-- nav bar -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
-			<div class="nav navbar-header">
-				<ul>
+			
 					<a class="navbar-brand" href="/home/profile">Mario Dominic</a>
-				</ul>
 				
-			</div>
+					<button class = "navbar-toggle" data-toggle = "collapse" data-target = "#navbarcollapser">
+				         <!-- <span class = "sr-only">Toggle navigation</span> -->
+				         <span class = "icon-bar"></span>
+				         <span class = "icon-bar"></span>
+				         <span class = "icon-bar"></span>
+				         
+				     </button>
+				
 
-			<div class="collapse navbar-collapse">
+			<div class="collapse navbar-collapse" id="navbarcollapser">
 				<ul class="nav navbar-nav">
 					<li><a href="/home/about">About Me</a></li>
 					<!-- <li><a href="/home/gallery">Image Gallery</a></li> -->
@@ -37,6 +44,11 @@
 				
 		</div>
 	</nav>
-
+	<script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+	<!-- <script src="/js/bootstrap.js"></script> -->
+	<script type="text/javascript" src="/js/collapse.js"></script>
 </body>
 </html>
