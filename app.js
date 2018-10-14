@@ -8,13 +8,13 @@ app.use(bodyParser.urlencoded({extended:true}));
 // serve custom stylesheets
 app.use(express.static("public"));
 
-// mongoose
-var	mongoose=require("mongoose");
-// connect to the mongoDBcat_app is the name of the DB to connect to, if none exists,it will be newly created
-var options={
-	useNewUrlParser:true,
-};
-mongoose.connect("mongodb://localhost:27017/portfolio_app_test1",options);
+// // mongoose
+// var	mongoose=require("mongoose");
+// // connect to the mongoDBcat_app is the name of the DB to connect to, if none exists,it will be newly created
+// var options={
+// 	useNewUrlParser:true,
+// };
+// mongoose.connect("mongodb://localhost:27017/portfolio_app_test1",options);
 
 // set view engine
 app.set("view engine","ejs");
@@ -53,13 +53,24 @@ app.get("/home/projects",function(req,res) {
 app.get("/home/certificates",function(req,res) {
 
 	res.render("certificates");
+});
 
+app.get("/home/enquiry",function(req,res) {
+
+	res.send("Page yet to be constructed");
+});
+
+app.get("/home/resume",function(req,res) {
+
+	res.send("Page yet to be constructed");
 });
 
 
 
 
- app.listen(3000,function () {
+
+
+ app.listen(process.env.PORT,function () {
 	// body...
 	console.log("The Portfolio Server Started!");
 });
