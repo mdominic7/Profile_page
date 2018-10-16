@@ -1,0 +1,30 @@
+<%include ./partials/header2.ejs%>
+
+	<div class="container maintext">
+		<div class="jumbotron">
+			<h1>Enquiry</h1>
+			<p>Have a project in mind? An idea you would like to share? feedback? or just wanna say hi!..Feel free to hit me up with your details..i will get in touch with you asap</p>
+
+
+			<form action="/home/enquiry" method="POST">
+					<div class="form-group">	
+						<label class="label label-info label-lg" for="name">Name</label>
+						<input class="form-control" type="text" name="enquiry[name]" placeholder="Please enter your name">
+					</div>
+					<div class="form-group">	
+						<label class="label label-info" for="email">Email</label>
+						<input class="form-control" type="email" name="enquiry[email]"  placeholder="Please enter your email">
+					</div>
+					<div class="form-group">	
+						<label class="label label-info" for="query">Enter your query</label>
+						<textarea class="form-control" name="enquiry[query]" rows="4" placeholder="Please enter your query"></textarea>
+					</div>
+					<div class="form-group">	
+						<button class="btn btn-lg btn-danger btn-block">Submit</button>
+					</div>	
+				</form>
+
+
+		</div>
+	</div>	
+<%include ./partials/footer.ejs%>	
