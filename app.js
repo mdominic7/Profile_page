@@ -19,6 +19,10 @@ mongoose.connect("mongodb://localhost:27017/portfolio_app_test2",options);
 // set view engine
 app.set("view engine","ejs");
 
+
+// User submitting an enquiry
+var User=require("./models/user");
+
 // routes
 app.get("/",function(req,res) {
 
@@ -61,10 +65,24 @@ app.get("/home/enquiry",function(req,res) {
 
 });
 
+app.post("/home/enquiry",function(req,res){
+	var user=req.body.enquiry;
+	User.create(user,function(err,newenquiry){
+		if(err)
+		{
+			console.log("Something went wrong");
+		}
+		else{
+			console.log("Yeppee!! Succesfully added enquiry!: ",newenquiry);
+			res.redirect("/home");
+
+		}
+	})
+});
 
 app.get("/home/resume",function(req,res) {
 
-	res.send("Page yet to be constructed");
+	res.render("cv");
 });
 
 
