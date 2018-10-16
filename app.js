@@ -14,7 +14,7 @@ var	mongoose=require("mongoose");
 var options={
 	useNewUrlParser:true,
 };
-mongoose.connect("mongodb://localhost:27017/portfolio_app_test2",options);
+mongoose.connect("mongodb://mdominic7@gmail.com:mariacomputers1963@ds131743.mlab.com:31743/profile_app",options);
 
 // set view engine
 app.set("view engine","ejs");
@@ -90,7 +90,7 @@ app.get("/home/resume",function(req,res) {
 
 
 
- app.listen(3000,function () {
+ app.listen(process.env.PORT,function () {
 	// body...
 	console.log("The Portfolio Server Started!");
 });
