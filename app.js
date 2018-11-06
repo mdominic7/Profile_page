@@ -90,7 +90,7 @@ app.get("/home/resume",function(req,res) {
 
 
 
- app.listen(3000,function () {
+ app.listen(process.env.PORT,function () {
 	// body...
 	console.log("The Portfolio Server Started!");
 });
