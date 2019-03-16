@@ -2,12 +2,50 @@
 
 	<div class="container maintext">
 		<div class="jumbotron">
-			<h2 class="page-header text-center">Whoopsie! my CV isn't ready yet...please check back later </h2>
+			<!-- <h2 class="page-header text-center">Whoopsie! my CV isn't ready yet...please check back later </h2>
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3">
 				  	<img src="/references/smiley.jpg" class="img-responsive">
 				  </div>
+			</div> -->
+		<div class="row">
+			<div class="col-md-12" id="the-container">
+				<div id="pdf-viewer"></div>	
+				<h3 style="text-align: center">You may download the CV <a href="/references/CV.pdf"> here</a></h3>
 			</div>
+		</div>
+		
+<script>
+		url = '/references/CV.pdf';
+    var thePdf = null;
+    // var scale = 1;
+    var container = document.getElementById('the-container');
+
+    pdfjsLib.getDocument(url).promise.then(function(pdf) {
+        thePdf = pdf;
+        viewer = document.getElementById('pdf-viewer');
+
+        for(page = 1; page <= pdf.numPages; page++) {
+          canvas = document.createElement("canvas");    
+          canvas.className = 'pdf-page-canvas';         
+          viewer.appendChild(canvas);            
+          renderPage(page, canvas);
+        }
+    });
+
+    function renderPage(pageNumber, canvas) {
+        thePdf.getPage(pageNumber).then(function(page) {
+          viewport = page.getViewport(1);
+          var scale = container.clientWidth / viewport.width;
+          viewport = page.getViewport(scale);
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;          
+          page.render({canvasContext: canvas.getContext('2d'), viewport: viewport});
+    });
+    }
+
+</script>
+	
 		</div>
 		</div>
 			<%include ./partials/footer.ejs%>	
